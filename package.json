@@ -1,0 +1,25 @@
+{
+    "name": "project-04",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "ts-node src/main.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.160.0",
+        "@aws-sdk/credential-providers": "^3.160.0",
+        "async-lock": "^1.4.1",
+        "axios": "^1.6.3",
+        "log4js": "^6.9.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    },
+    "devDependencies": {
+        "@types/async-lock": "^1.4.2"
+    }
+}

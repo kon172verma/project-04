@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+    "plugins": ["@typescript-eslint", "prettier"],
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "quotes": ["warn", "single"],
+        "brace-style": [
+            "warn",
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "guard-for-in": ["error"],
+        "curly": ["warn"],
+        "prefer-arrow-callback": [
+            "error",
+            {
+                "allowUnboundThis": false
+            }
+        ],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "prettier/prettier": ["off", {}],
+        "disable-next-line": "off",
+        "no-console": "off",
+        "no-empty-function": ["warn"]
+    }
+}

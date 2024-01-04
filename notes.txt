@@ -1,0 +1,614 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Whenever there is only a single statement to be executed inside the if block then shorthand if can be used.
+(Syntax) if condition: statement
+
+2. Where there is only one statement to be executed in both if and else block
+(Syntax) statement_when_True if condition else statement_when_False
+
+3. all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting, or bitwise operation.
+
+4. The pass statement is a null statement. The pass statement is generally used as a placeholder.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Enumerate:
+
+for index, value in enumerate(['The', 'Big', 'Bang', 'Theory']):
+    print(index, value)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. ZIP:
+
+questions = ['name', 'colour', 'shape']
+answers = ['apple', 'red', 'a circle']
+for question, answer in zip(questions, answers):
+    print('What is your {0}?  I am {1}.'.format(question, answer))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. ITEMS (earlier ITERITEMS):
+
+d = {"geeks": "for", "only": "geeks"}
+for i, j in d.items():
+    print(i, j)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. SORTED and REVERSED
+
+basket = ['guave', 'orange', 'apple', 'pear', 'guava', 'banana', 'grape']
+for fruit in sorted(set(basket)):
+    print(fruit)
+
+lis = [1, 3, 5, 6, 2, 1, 3]
+for i in reversed(lis):
+    print(i, end=" ")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Single line while loop can contain multiple statements, separated by semi-colon
+while (count < 5): count += 1; print("Hello Geek")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. WHILE with ELSE: else statement are only executed if break is not executed. This is similar for FOR-LOOPS
+
+i = 0
+while i < 4:
+    i += 1
+    print(i)
+else:  # Executed because no break in for
+    print("No Break\n")
+ 
+i = 0
+while i < 4:
+    i += 1
+    print(i)
+    break
+else:  # Not executed as there is a break
+    print("No Break")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. A try statement can have more than one except clause, to specify handlers for different exceptions.
+
+try:
+    # statement(s)
+except IndexError:
+    # statement(s)
+except ValueError:
+    # statement(s)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. TRY with ELSE
+
+The code enters the else block only if the try clause does not raise an exception.
+
+try:
+    # Some Code.... 
+except:
+    # Handling of exception (if required)
+else:
+    # execute if no exception
+finally:
+    # Some code .....(always executed)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. FILE handling
+
+# Modes: r, w, a, rb, wb, ab, r+, w+, a+, rb+, wb+, ab+
+file = open(filename, mode)
+
+# To print line by line.
+for each in file:
+    print (each)
+
+# To print entire file.
+print (file.read())
+
+# data is a list of lines.
+data = file.readlines()
+
+# To print first 5 characters of the file.
+print (file.read(5))
+
+# Initialize back to start.
+file.seek()
+
+# Closing file.
+file.close()
+
+# Here we do not need to close file explicitly.
+with open(filename, mode) as file:
+	print(file.read())
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. KEYWORDS: 
+
+and	as assert break class continue def del
+elif else except False finally for from global
+if import in is lambda None nonlocal not
+or pass raise return True try while with yield
+
+
+NONE: 		Python does not have null, instead it has None.
+IS: 	  	This keyword is used to test object identity, i.e to check if both the objects take the same memory location or not. 
+				* string is immutable, hence occupy same memory location.
+				* dictionary is mutable, hence occupy different memory location.
+AS: 		Used while importing modules. e.g. from math import factorial as FACT
+ASSERT: 	This function is used for debugging purposes. Usually used to check the correctness of code. 
+			If a statement is evaluated to be true, nothing happens, but when it is false, “AssertionError” is raised. 
+			One can also print a message with the error, separated by a comma.
+			e.g. assert b != 0, 'Divide by 0 error'
+
+GLOBAL: 	This keyword is used to define a variable inside the function to be of a global scope.
+NONLOCAL: 	Similar to the global, but rather than global, this keyword declares a variable to point to variable of outside enclosing function, in case of nested functions.
+
+YIELD:		This keyword is used like return statement but is used to return a generator.
+LAMBDA:		To create a single line functions.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Statements in Python can be extended to one or more lines using parentheses (), braces {}, square brackets [], semi-colon (;), continuation character slash (\).
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Docstrings are a type of comment that is used to show how the program works. Docstrings and Multi-line comments may look the same but they aren’t.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. Taking input from user, e.g.
+
+name = input('What is your name?')
+print(name)
+
+input() was previously known as raw_input()
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. By default python’s print() function ends with a newline. To change this use:
+
+print("Welcome to" , end = ' ')
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. 
+
+print("First number is {} and second number is {}".format(a, b))
+
+l=[1,2,3,4,5,6]
+print(*l) 			#Prints: 1 2 3 4 5 6
+print(l)			#Prints: [1, 2, 3, 4, 5, 6]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. OS MODULE
+
+CURRENT DIRECTORY: The folder where the Python script is running is known as the Current Directory. This is not the path where the Python script is located.
+os.getcwd()
+
+# Changing the directory.
+os.chdir(new_path)		
+
+# Join path.
+os.path.join(parent_dir, directory)
+
+# Create directory.
+os.mkdir(path) 
+
+# Create directory recursively.
+os.makedirs(path)
+
+# Lists all the files and directories. Default path = CWD
+os.listdir(path) 
+
+# Removes a file.
+os.remove(path)
+
+# Removes a directory.
+os.rmdir(path)
+
+# Rename a file.
+os.rename(oldName, newName)
+
+# Check if path exists.
+os.path.exists(path)
+
+# Get the size of a file.
+os.path.getsize(path)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21. IMPORTANT FUNCTIONS:
+
+MAP(function, iterable) -> applies the function to all the elements of iterable and returns a list of result.
+
+	def square(x):
+		return x*x
+	map(square, [1,2,3,4]) -> returns [2,4,6,8]
+
+
+FILTER(function, iterable) -> applies the function to all the elements of iterable and returns a list of elements for which our function returned true.
+
+	def even(x):
+		return false if x%2 else true
+	map(square, [1,2,3,4]) -> returns [2,4]
+
+
+ANY
+
+Returns true if any of the items is True. It returns False if empty or all are false. 
+Any can be thought of as a sequence of OR operations on the provided iterables.
+Short-circuit operation.
+
+	print (any([False, False, True, False])) -> returns True
+
+
+All
+Returns true if all of the items are True (or if the iterable is empty). 
+All can be thought of as a sequence of AND operations on the provided iterables.
+Short-circuit operation.
+
+	print (any([False, False, False, True])) -> returns False
+
+
+LAMBDA
+
+square = lambda y: y * y 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22. ABSTRACT CLASSES:
+
+A class which contains one or more abstract methods is called an abstract class. 
+An abstract method is a method that has a declaration but does not have an implementation. 
+An abstract class allows you to create a set of methods that MUST be created within any child classes built from the abstract class.
+
+By default, Python does not provide abstract classes. 
+Python comes with a module that provides the base for defining Abstract Base classes(ABC) and that module name is ABC. 
+ABC works by decorating methods of the base class as abstract and then registering concrete classes as implementations of the abstract base. 
+
+from abc import ABC, abstractmethod
+class Polygon(ABC):
+    @abstractmethod
+    def noofsides(self):
+        pass
+class Triangle(Polygon):
+    # overriding abstract method
+    def noofsides(self):
+        print("I have 3 sides")
+
+Another way to make sure that the child class is a subclass of parent, we can use the following pre-defined Python methods:
+print( issubclass(child, parent) )
+print( isinstance(child(), parent) )
+But, here it is not necessary to implement all the methods of parent in child.
+
+
+Abstract class can contain both abstract methods and concrete(normal) methods.
+Instantiating the parent class results in error.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. PRINT FUNCTION
+
+print(value(s), sep= ‘ ‘, end = ‘\n’, file=file, flush=flush)
+
+Parameters: 
+
+value(s) : Any value, and as many as you like. Will be converted to string before printed
+sep=’separator’ : (Optional) Specify how to separate the objects, if there is more than one. Default :’ ‘
+end=’end’: (Optional) Specify what to print at the end.Default : ‘\n’
+file : (Optional) An object with a write method. Default :sys.stdout
+flush : (Optional) A Boolean, specifying if the output is flushed (True) or buffered (False). Default: False
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. NAMESPACE is a space that contains the names of all the variables, objects, ... of different scopes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+25. PRECEDENCE OF OPERATORS
+
+{ }				Parentheses (grouping)
+f(args…)		Function call
+x[index:index]	Slicing
+x[index]		Subscription
+x.attribute		Attribute reference
+
+**				Exponent
+~x				Bitwise not
+
++x, -x			Positive, negative
+*, /, %			Product, division, remainder
++, –			Addition, subtraction
+
+<<, >>			Shifts left/right
+
+&				Bitwise AND
+^				Bitwise XOR
+|				Bitwise OR
+
+in, not in, 
+is, is not, 
+<, <=, >, >=,
+<>, !=, ==		Comparisons, membership, identity
+
+not x			Boolean NOT
+and				Boolean AND
+or				Boolean OR
+
+lambda			Lambda expression
+
+
+ASSOCIATIVITY OF OPERATORS
+Exponent, Logical NOT, Assignment operators are right-to-left associative. Rest are left-to-right associative.
+
+NON-ASSOCIATIVE OPERATORS
+x < y < z neither means (x < y) < z nor x < (y < z). x < y < z is equivalent to x < y and y < z
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+26. 'IS' - IDENTITY Operator
+
+‘is’ operator – Evaluates to True if the variables on either side of the operator point to the same object and false otherwise.
+	* string is immutable, hence occupy same memory location.
+	* dictionary is mutable, hence occupy different memory location.
+
+'is not' operator - returns the reverse of is.
+
+id(x) -> returns the memory location of x.
+
+example:
+	x = 5
+	y = 5
+	print(x is y)
+	id(x)
+	id(y)
+
+
+For immutable objects '==' operator and is operator returns the same value. But for mutable objects this is not true.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+27. OPERATOR OVERLOADING
+
+Operator Overloading means giving extended meaning beyond their predefined operational meaning. 
+For example operator + is used to add two integers as well as join two strings and merge two lists. 
+It is achievable because ‘+’ operator is overloaded by int class and str class.
+
+	class complex:
+	    def __init__(self, a, b):
+	        self.a = a
+	        self.b = b
+	 
+	     # adding two objects
+	    def __add__(self, other):
+	        return self.a + other.a, self.b + other.b
+	 
+	Ob1 = complex(1, 2)
+	Ob2 = complex(2, 3)
+	Ob3 = Ob1 + Ob2
+	print(Ob3) -> returns (3, 5)
+
+
+Operator overloading can be done by creating the methods for the following:
+
++	__add__(self, other)
+–	__sub__(self, other)
+*	__mul__(self, other)
+....
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+28. PYTHON FUNCTIONS
+
+Though, Python accepts the above syntax for data types and return type, but it does not follow it.
+
+	def add(num1: int, num2: int) -> int:
+	    """Add two numbers"""
+	    num3 = num1 + num2
+	    return num3
+
+To, print doc-string use: print(function_name.__doc__)
+
+Default Arguments: Once we have a default argument, all the arguments to its right must also have default values.
+
+Keyword Arguments: Name is mentioned along with value.
+
+	def student(firstname, lastname):
+	    print(firstname, lastname)
+	student(firstname='Geeks', lastname='Practice')
+	student(lastname='Practice', firstname='Geeks')
+
+Last 2 lines are equivalent.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+29. VARIABLE ARGUMENTS:
+
+In Python, we can pass a variable number of arguments to a function using special symbols. There are two special symbols:
+*args (Non-Keyword Arguments)
+**kwargs (Keyword Arguments)
+
+	def myFun(*argv):
+	    for arg in argv:
+	        print(arg)
+	myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+
+
+	def myFun(**kwargs):
+	    for key, value in kwargs.items():
+	        print("%s == %s" % (key, value))
+	myFun(first='Geeks', mid='for', last='Geeks')
+
+
+	def myFun(arg1, arg2, arg3):
+	    print("arg1:", arg1)
+	    print("arg2:", arg2)
+	    print("arg3:", arg3)
+	args = ("Geeks", "for", "Geeks")
+	myFun(*args)
+	kwargs = {"arg1": "Geeks", "arg2": "for", "arg3": "Geeks"}
+	myFun(**kwargs)
+
+
+	def myFun(*args, **kwargs):
+	    print("args: ", args)
+	    print("kwargs: ", kwargs)
+	myFun('geeks', 'for', 'geeks', first="Geeks", mid="for", last="Geeks")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+30. In Python every variable name is a reference. When we pass a variable to a function, a new reference to the object is created.
+When we pass a reference and change the received reference to something else, the connection between the passed and received parameter is broken. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+31. YIELD
+
+The yield statement suspends function’s execution and sends a value back to the caller, but retains enough state to enable function to resume where it is left off. 
+When resumed, the function continues execution immediately after the last yield run. 
+This allows its code to produce a series of values over time, rather than computing them at once and sending them back like a list.
+
+	def simpleGeneratorFun():
+	    yield 1
+	    yield 2
+	    yield 3
+	for value in simpleGeneratorFun(): 
+	    print(value)
+
+
+	def x():
+	    yield 1
+	    yield 2
+	    yield 3
+	print(x.next())
+	print(x.next())
+	print(x.next())
+
+
+Both the examples does the same work.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+32. GLOBAL and NONLOCAL
+
+If we need to assign a new value to a global variable then we can do that by declaring the variable as global.
+
+	def add():
+	    x = 15
+	    def change():
+	        global x
+	        x = 20
+	    print("Before making changing: ", x)
+	    print("Making change")
+	    change()
+	    print("After making change: ", x)
+	 
+	add()
+	print("value of x", x)
+
+Here, NONLOCAL should have been used instead of global.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+33. FIRST CLASS FUNCTION:
+
+Properties of first class functions:
+
+	A function is an instance of the Object type.
+	You can store the function in a variable.
+	You can pass the function as a parameter to another function.
+	You can return the function from a function.
+	You can store them in data structures such as hash tables, lists, …
+
+
+	def shout(text):
+	    return text.upper()
+	print (shout('Hello'))
+	yell = shout
+	print (yell('Hello'))
+
+
+	def shout(text):
+	    return text.upper()
+	def whisper(text):
+	    return text.lower()
+	def greet(func):
+	    # storing the function in a variable
+	    greeting = func("""Hi, I am created by a function passed as an argument.""")
+	    print (greeting) 
+	greet(shout)
+	greet(whisper)
+
+
+	def create_adder(x):
+	    def adder(y):
+	        return x+y
+	    return adder
+	add_15 = create_adder(15)
+	print (add_15(10))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+34. Python CLOSURE
+
+A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory. 
+
+	def outerFunction(text):
+	    text = text
+	    def innerFunction():
+	        print(text)
+	    return innerFunction 		# Note we are returning function WITHOUT parenthesis
+	 
+	if __name__ == '__main__':
+	    myFunction = outerFunction('Hey!')
+	    myFunction()
+
+Output: Hey!
+
+As observed from the above code, closures help to invoke functions outside their scope.
+The function innerFunction has its scope only inside the outerFunction. 
+But with the use of closures, we can easily extend its scope to invoke a function outside its scope.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+35. Python DECORATORS
+
+	@decor
+	def func():
+	    print("Gfg")
+
+	*) This is equivalent to decor(func())
+
+
+	def calculate_time(func):
+	    def inner1(*args, **kwargs):
+	        begin = time.time()
+	        func(*args, **kwargs)
+	        end = time.time()
+	        print("Total time taken in : ", func.__name__, end - begin)
+	    return inner1
+	
+	@calculate_time
+	def factorial(num):
+	    time.sleep(2)
+	    print(math.factorial(num))
+
+	factorial(10)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
